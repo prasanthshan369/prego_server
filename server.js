@@ -9,6 +9,7 @@ app.get("/catchOauthToken", (req, res) => {
   const authorizationCode = req.query.code;
   if (authorizationCode) {
     console.log("Received Authorization Code:", authorizationCode);
+      res.json(authorizationCode)
   } else {
     res.send("Error: No authorization code provided.");
   }
