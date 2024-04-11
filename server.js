@@ -17,6 +17,7 @@
 // app.listen(process.env.PORT||3000, () => {
 //   console.log("Server is running and waiting for the authorization code.");
 // });
+
 const express = require("express");
 const app = express();
 require('dotenv').config()
@@ -36,7 +37,7 @@ app.get("/catchOauthToken", (req, res) => {
   if (authorizationCode) {
     console.log("Received Authorization Code:", authorizationCode);
     // res.json(authorizationCode)
-    res.redirect('https://pregoclient.netlify.app/'+authorizationCode);
+    res.redirect('https://pregoclient.netlify.app/?token='+authorizationCode);
   } else {
     res.send("Error: No authorization code provided.");
   }
