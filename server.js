@@ -1,7 +1,11 @@
 const express = require("express");
 const app = express();
+const cors=require('cors')
 require('dotenv').config()
-
+app.use(cors())
+app.use(express.json())
+require('./config')
+app.use('/',require('./routes'))
 app.get('/',(req,res)=>{
   const {code,state} =req.query
   console.log(code,state);
