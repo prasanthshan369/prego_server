@@ -21,7 +21,7 @@ app.get("/catchOauthToken", (req, res) => {
   if (authorizationCode) {
     console.log("Received Authorization Code:", authorizationCode);
     // res.json(authorizationCode)
-    res.redirect('https://pregoclient.netlify.app/?token='+authorizationCode);
+    res.redirect('https://pregoclient.netlify.app?token='+authorizationCode);
   } else {
     res.send("Error: No authorization code provided.");
   }
