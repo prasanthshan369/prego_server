@@ -1,7 +1,7 @@
 const db = require('../config')
 const router=require('express').Router()
 const moment =require('moment')
-router.get('/',(req,res)=>{
+router.get('/devices',(req,res)=>{
 sql="SELECT * FROM prego.devices"
     db.query(sql,(err,result)=>{
         if(err)console.log(err);
